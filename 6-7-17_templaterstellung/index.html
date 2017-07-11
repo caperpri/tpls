@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+<!--
+Head: Viewport Favicon, Js, CSS
+-->
+
+	<meta charset="UTF-8">
+	<title>Templates</title>
+	<meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="template/css/stylesheet.css">
+
+</head>
+<body onload="picshow()">
+
+<div id="wrapper">
+
+	<header>
+
+		<div id="logo" class="logo">
+			<img src="" alt="logo"/>
+		</div>
+
+		<div id="toggle" onclick="toggle_on()">
+			<span id="toggle_button" ></span>
+		</div>	
+
+		<div id="normal_nav">
+			
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="">File</a></li>
+				<li><a href="">File</a></li>
+				<li><a href="">File</a></li>
+				<li><a href="">File</a></li>
+			</ul>
+		</div>
+
+		<div id="mini_nav">
+
+			<span id="exit" onclick="toggle_off()">X</span>
+
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="">File</a></li>
+				<li><a href="">File</a></li>
+				<li><a href="">File</a></li>	
+				<li><a href="">File</a></li>
+			</ul>
+
+			<div class="impressum_header">
+				<span class="impressum">
+					<a href="impressum.php">Impressum</a>
+				</span>
+
+				<span id="copyright">
+					© 2017 copyright
+				</span>
+			</div>
+		
+		</div>
+
+	</header>
+
+	<div id="content">
+	<div id="show"></div>
+		<div id="slider">
+			<ul class="slider_list">
+				<li class="s_image">
+					<div class="bildbox">
+						<img src="template\images\set.jpeg" alt=""/>
+					</div>
+					<div class="bildbox2">
+						<img src="template\images\set.jpeg" alt=""/>
+					</div>
+				</li>
+				<li class="s_image">
+					<div class="bildbox">
+						<img src="template\images\bg.jpg" alt=""/>
+					</div>
+					<div class="bildbox2">
+						<img src="template\images\bg.jpg" alt=""/>
+					</div>
+				</li>
+				<!--<li class="s_image">
+					<img src="" alt=""/>
+				</li>
+				<li class="s_image">
+					<img src="" alt=""/>
+				</li>
+				<li class="s_image">
+					<img src="" alt=""/>
+				</li>
+				<li class="s_image">
+					<img src="" alt=""/>
+				</li>-->
+			</ul>
+			<div id="filter">
+			</div>
+			
+			<div id="button_liste">
+				<button class="button" onclick="nex_pic(0)"></button>
+				<button class="button" onclick="nex_pic(1)"></button>
+			</div>
+		</div>
+
+		
+
+		<div class="cbox">
+			<div class="bheader">
+				<span class="head_1"><h2>Text</h2></span>
+				<span class="head_2">Text Text Text Text Text Text Text Text Text Text</span>
+			</div>
+
+			<div class="bcontent">
+
+				<h3>Text</h3>
+				<p>
+					Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+				</p>
+				<p>
+					Text Text Text Text Text Text Text
+				<br>
+					Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+				<br>
+					Text Text Text Text Text Text Text
+				</p>
+
+			</div>
+		</div>
+
+		<div class="cbox">
+			<div class="bheader">
+				<span class="head_1"><h2>Text</h2></span>
+				<span class="head_2">Text Text Text Text Text Text Text Text Text Text</span>
+			</div>
+
+			<div class="bcontent">
+				<h3>Text</h3>
+				<p>
+					Text Text Text Text Text Text Text Text Text Text Text Text
+				</p>
+				<p>
+					Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+				<br>
+					Text Text Text Text Text Text Text
+				<br>
+					Text Text Text Text Text Text Text
+				</p>
+
+			</div>
+		</div>
+
+		<div class="cbox">
+			<div class="bheader">
+				<span class="head_1"><h2>Text</h2></span>
+				<span class="head_2">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</span>
+			</div>
+
+			<div class="bcontent">
+				<h3>Text</h3>
+				<p>
+					Text Text Text Text Text Text
+				</p>
+				<p>
+					Text Text Text Text Text Text Text
+				<br>
+					Text Text Text Text Text Text Text
+				<br>
+					Text Text Text Text Text Text Text
+				</p>
+
+			</div>
+		</div>
+
+	</div>
+
+	<footer>
+		footer
+	</footer>
+
+</div>
+
+<script>
+
+
+var prev;
+var next;
+  var x = document.querySelectorAll(".s_image"); 
+  var y = document.getElementById("show");
+
+var button = document.querySelectorAll(".button"); 
+
+
+function picshow() {
+	next= 0;
+	button[next].style.backgroundColor ="white";
+	x[next].classList.add('fadein');
+	next++;
+plusDivs();
+}
+
+
+
+function plusDivs() {
+var intervall = setInterval(function() {
+
+
+showDivs();
+
+
+
+
+  }, 5000);
+
+for (var i = 0; i< 2; i++) {
+document.getElementsByClassName("button")[i].addEventListener("click", function(){
+clearInterval(intervall);
+
+}); 
+}
+
+	
+}
+
+function showDivs() {
+
+for (var i = 0; i < x.length; i++) {
+	button[i].style.backgroundColor ="rgba(255,255,255,0)";
+	x[i].className = "s_image fadeout";
+}   
+
+if (next >= x.length) {
+
+  	next = 0;
+
+}
+
+  	x[next].className = "s_image fadein";
+  	button[next].style.backgroundColor ="white";
+  	
+  	next++;
+}
+
+function nex_pic(n) {
+
+	next= n;
+
+	for (var i = 0; i < x.length; i++) {
+		button[i].style.backgroundColor ="rgba(255,255,255,0)";
+		x[i].className = "s_image fadeout";
+	
+	}
+
+	button[next].style.backgroundColor ="white";
+	x[next].className = "s_image fadein";
+	
+	next++;
+	
+	plusDivs();
+
+} 
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+/***************************************************************************
+						1. Globale Deklination
+****************************************************************************/
+
+a, a:link, a:visited, a:hover, a:active{
+	text-decoration: none;
+	color: white;
+}
+
+ul {
+	 list-style: none;
+}
+
+
+/***************************************************************************
+						2. CONTENT (Body, header footer etc)
+****************************************************************************/
+/******************************************
+				2.0 Body
+*******************************************/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 350px;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family:  Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+	color: white;
+	background-color: black;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.clearafter:after {
+	clear: both;
+}
+
+/******************************************
+				2.1 Header und nav
+*******************************************/
+header {
+	padding: 0;
+	display: block;
+	font-size: 15px;
+	width: 1200px;
+	margin: 0 auto 2.5em;
+	border-bottom: 1px solid #194E08;
+	box-shadow: 0px -10px 20px #48E913;
+	
+}
+
+header:after {
+	clear: both;
+}
+
+#logo {
+	display: inline-block;
+	margin-left: 5%;
+	float: left;
+	width: 15%;
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+}
+
+#normal_nav, #mini_nav {
+	display: table;
+	float: right;
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+	margin-right: 5%;
+	width: 70%;
+	text-align: center;
+}
+
+
+#normal_nav ul, #mini_nav ul {
+	display: table-row;
+	width: 100%;
+	max-width: 100%;
+} 
+
+#normal_nav li, #mini_nav li {
+	display: table-cell;
+	width: 20%;
+	padding: 15px;
+}
+#normal_nav li a, #mini_nav li a {
+	width: 100%;
+	display: block;
+}
+
+#normal_nav li a:hover , #mini_nav li a:hover {
+	font-weight: bold;
+	box-shadow: 0px 1px 2px  #48E913;
+
+}
+
+ #mini_nav {
+ 	display: none;
+ }
+
+/******************************************
+				2.2 Footer
+*******************************************/
+footer {
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+	display: block;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+}
+
+footer span {
+	margin-right: 2.5em;
+	color:#9F8329;
+}
+
+/******************************************
+				2.3 Content
+*******************************************/
+
+#wrapper {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 100vh;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+
+
+#content {
+	display: block;
+	width: 1200px;
+	max-width: 1200px;
+	padding: 0 0 7.5vh ;
+	margin: 0 auto;
+	margin-top: 2vh;
+	overflow: hidden;
+}
+
+/******************************************
+				2.5 Bilder
+*******************************************/
+
+#slider {
+	width: 100%;
+	height: 50vh;
+	overflow: hidden;
+	margin: 5vh 0;
+	position: relative;
+	display: block;
+}
+
+.s_image {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity:0;
+
+}
+
+.bildbox {
+	width: 50%;
+	float: left;
+	overflow: hidden;
+}
+.bildbox2 {
+	width: 50%;
+	float: right;
+	overflow: hidden;
+}
+.s_image .bildbox img {
+	width: 200%;
+	overflow: hidden;
+
+}
+
+.s_image .bildbox2 img {
+	width: 200%;
+	margin-left:-100%;
+	overflow: hidden;
+	-webkit-filter: contrast(200%); /* Safari */
+    filter: contrast(200%);
+}
+
+.fadein {
+   opacity:1;
+   transition: opacity 5s;
+}
+
+.fadeout {
+   opacity:0;
+   transition: opacity 5s;
+}
+
+.opac_null {
+
+	opacity: 0;
+}
+
+
+#filter {
+	width: 50%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	filter: greyscale(100%);
+background-blend-mode: color-dodge;
+}
+
+#button_liste {
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 1vh;
+	display: block;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
+.button {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 2px solid white;
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0);
+	margin-right: 25px;
+	cursor: pointer;
+}
+
+
+
+/******************************************
+				2.5 Boxes
+*******************************************/
+
+.cbox {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	margin: 50px 0;
+	overflow: hidden;
+	border-collapse: collapse
+
+}
+
+.bheader {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+
+	border-top: 1px solid #194E08;
+	border-bottom: 1px solid #194E08;
+	box-shadow: 0px -10px 20px #48E913;
+
+	padding: 1.5vh 0;
+}
+
+
+.head_1 {
+	display: inline-block;
+	width: 20%;
+	max-width: 20%;
+	margin-right: 15px;
+	margin-left: 5%;
+	color: red;
+	vertical-align: middle;
+}
+	
+
+.head_2 {
+	display: inline-block;
+	width: 70%;
+	max-width: 70%;
+	vertical-align: middle;
+}
+
+.bcontent {
+	display:block;
+	width: 90%;
+	max-width: 90%;
+	padding: 0;
+	line-height: 150%;
+	margin-left: 5%;
+	margin-top: 2.5vh;
+}
+
+.bcontent h3 {
+	margin-bottom: 1.5vh;
+}
+
+.bcontent p {
+	margin-bottom: 0.75vh;
+}
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+
+header, #content {
+	width: 100%;
+	max-width: 100%;
+} 
+}
